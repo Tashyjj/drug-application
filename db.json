@@ -1,0 +1,21 @@
+{
+    "drugs": [
+        {
+            "id": "a1",
+            "drug_name": "PainAway",
+            "drug_dosage": 250,
+            "drug_company": "HealthCorp",
+            "drug_shape": "capsule",
+            "drug_color": "red"
+        },
+        {
+            "id": "b2",
+            "drug_name": "CalmTab",
+            "drug_dosage": 500,
+            "drug_company": "MediZen",
+            "drug_shape": "round",
+            "drug_color": "white"
+        }
+    ]
+}
+  
