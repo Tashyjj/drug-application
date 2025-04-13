@@ -11,9 +11,14 @@ async function getDrugs() {
 export default async function CollectionPage() {
     const drugs = await getDrugs();
 
+
     return (
-        <div style={{ padding: '2rem' }}>
-            <h1>Drug Collection</h1>
+        <div style={{
+            padding: '2rem',
+            maxWidth: '800px',
+            margin: '0 auto'
+            }}>
+            <h1 style={{ marginBottom: '1.5rem' }}>Drug Collection</h1>
             <ul style={{ listStyle: 'none', padding: 0 }}>
                 {drugs.map((drug) => (
                 <li key={drug.id} style={{
@@ -21,14 +26,17 @@ export default async function CollectionPage() {
                     padding: '1rem',
                     border: '1px solid #ccc',
                     borderRadius: '8px',
-                    backgroundColor: '#f9f9f9'
+                    backgroundColor: '#ffffff',
+                    boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)'
                 }}>
-                    <strong>ID:</strong> {drug.id}<br />
-                    <strong>Name:</strong> {drug.drug_name}<br />
-                    <Link href={`/collection/${drug.id}`}>more</Link>
+                    <p><strong>ID:</strong> {drug.id}</p>
+                    <p><strong>Name:</strong> {drug.drug_name}</p>
+                    <Link href={`/collection/${drug.id}`}>More →</Link>
                 </li>
                 ))}
             </ul>
         </div>
     );
+
+
 }
