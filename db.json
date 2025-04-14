@@ -1,20 +1,31 @@
 {
   "drugs": [
     {
-      "id": "b2",
-      "drug_name": "CalmTab",
-      "drug_dosage": 500,
-      "drug_company": "MediZennn",
-      "drug_shape": "round",
-      "drug_color": "white"
+      "id": "a1",
+      "drug_name": "PainAway",
+      "drug_dosage": 4,
+      "drug_company": "HealthCorp",
+      "drug_shape": "circular",
+      "drug_color": "orange",
+      "drug_unit": "mg"
     },
     {
-      "id": "c3",
-      "drug_name": "PainAway",
-      "drug_dosage": 1,
-      "drug_company": "HealthCorp",
-      "drug_shape": "Square",
-      "drug_color": "blue"
+      "id": "b2",
+      "drug_name": "Me",
+      "drug_dosage": 12,
+      "drug_company": "FixAll777",
+      "drug_shape": "rectangular",
+      "drug_color": "orange",
+      "drug_unit": "mg"
+    },
+    {
+      "id": "d4",
+      "drug_name": "medd",
+      "drug_dosage": 78,
+      "drug_company": "hello ee",
+      "drug_shape": "rectangular",
+      "drug_color": "red",
+      "drug_unit": "mg"
     }
   ]
 }

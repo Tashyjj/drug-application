@@ -55,7 +55,7 @@ export default async function AdminPage() {
                     <tr key={drug.id}>
                     <td style={{ padding: '8px', whiteSpace: 'nowrap' }}>{drug.id}</td>
                     <td style={{ padding: '8px', whiteSpace: 'nowrap', maxWidth: '120px' }}>{drug.drug_name}</td>
-                    <td style={{ padding: '8px', whiteSpace: 'nowrap' }}>{drug.drug_dosage}</td>
+                    <td style={{ padding: '8px', whiteSpace: 'nowrap' }}>{drug.drug_dosage} {drug.drug_unit}</td>
                     <td style={{ padding: '8px', whiteSpace: 'nowrap' }}>{drug.drug_company}</td>
                     <td style={{ padding: '8px', whiteSpace: 'nowrap' }}>{drug.drug_shape}</td>
                     <td style={{ padding: '8px', whiteSpace: 'nowrap' }}>{drug.drug_color}</td>
