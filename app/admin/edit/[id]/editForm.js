@@ -15,7 +15,7 @@ export default function EditForm({ drug }) {
         const errs = [];
 
         if (form.drug_name.length < 3 || form.drug_name.length > 30) {
-        errs.push('Drug name must be between 3 and 30 characters in length');
+        errs.push('Drug name must be between 3 and 30 characters');
         }
         const dosage = parseInt(form.drug_dosage);
         if (isNaN(dosage) || dosage < 10 || dosage > 1000) {

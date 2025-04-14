@@ -7,6 +7,14 @@
       "drug_company": "MediZennn",
       "drug_shape": "round",
       "drug_color": "white"
+    },
+    {
+      "id": "c3",
+      "drug_name": "PainAway",
+      "drug_dosage": 1,
+      "drug_company": "HealthCorp",
+      "drug_shape": "Square",
+      "drug_color": "blue"
     }
   ]
 }

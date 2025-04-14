@@ -29,8 +29,8 @@ export default async function CollectionPage() {
                     backgroundColor: '#ffffff',
                     boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)'
                 }}>
-                    <p><strong>ID:</strong> {drug.id}</p>
-                    <p><strong>Name:</strong> {drug.drug_name}</p>
+                    <p style={{ color: '#333' }}><strong>ID:</strong> {drug.id}</p>
+                    <p style={{ color: '#333' }}><strong>Name:</strong> {drug.drug_name}</p>
                     <Link href={`/collection/${drug.id}`}>More →</Link>
                 </li>
                 ))}

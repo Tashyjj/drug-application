@@ -39,11 +39,19 @@ export default function CreateDrugPage() {
                 <div key={field} style={{ marginBottom: '1rem' }}>
                     <label>{field.replace('_', ' ')}: </label>
                     <input
-                    type="text"
-                    name={field}
-                    value={form[field]}
-                    onChange={handleChange}
-                    required
+                        type="text"
+                        name={field}
+                        value={form[field]}
+                        onChange={handleChange}
+                        required
+                        style={{
+                            backgroundColor: 'white',
+                            color: '#333',
+                            padding: '0.5rem',
+                            border: '1px solid #ccc',
+                            borderRadius: '4px',
+                            width: '500px'
+                        }}
                     />
                 </div>
                 ))}
