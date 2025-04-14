@@ -2,21 +2,12 @@
   "drugs": [
     {
       "id": "a1",
-      "drug_name": "PainAway",
-      "drug_dosage": 4,
+      "drug_name": "Paii",
+      "drug_dosage": 11,
       "drug_company": "HealthCorp",
-      "drug_shape": "circular",
-      "drug_color": "orange",
-      "drug_unit": "mg"
-    },
-    {
-      "id": "b2",
-      "drug_name": "Me",
-      "drug_dosage": 12,
-      "drug_company": "FixAll777",
-      "drug_shape": "rectangular",
-      "drug_color": "orange",
-      "drug_unit": "mg"
+      "drug_shape": "oval",
+      "drug_color": "white",
+      "drug_unit": "g"
     },
     {
       "id": "d4",

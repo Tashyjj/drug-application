@@ -23,18 +23,30 @@ export default function CreateDrugPage() {
         setForm({ ...form, [e.target.name]: e.target.value });
     };
 
-    const validate = () => {
+    const validate = async () => {
         const errs = [];
     
+        //validating agasint existing
+        const res = await fetch('http://localhost:4000/drugs');
+        const existingDrugs = await res.json();
+
+        //seeig if Id exists or no
+        if (existingDrugs.some(drug => drug.id === form.id.trim())) {
+            errs.push('Drug ID already exists. Please choose a unique ID.');
+        }
+
+        //drug name
         if (form.drug_name.length < 3 || form.drug_name.length > 30) {
             errs.push('Drug name must be between 3 and 30 characters in length');
         }
     
+        //dosage
         const dosage = parseInt(form.drug_dosage);
         if (isNaN(dosage) || dosage < 10 || dosage > 1000) {
             errs.push('Drug dosage must be a number between 10 and 1000');
         }
     
+        //company
         if (!/^[a-zA-Z\s]+$/.test(form.drug_company)) {
             errs.push('Drug company name must only contain letters and spaces');
         }
@@ -45,16 +57,19 @@ export default function CreateDrugPage() {
     const handleSubmit = async (e)=> {
         e.preventDefault();
 
-        const validationErrors = validate();
+        const validationErrors = await validate();
             if (validationErrors.length > 0) {
                 setErrors(validationErrors);
                 return;
             }
 
         await fetch('http://localhost:4000/drugs', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...form, drug_dosage: parseInt(form.drug_dosage) }),
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ 
+                ...form, 
+                drug_dosage: parseInt(form.drug_dosage) 
+            }),
         });
 
         router.push('/admin');
