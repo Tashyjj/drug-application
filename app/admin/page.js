@@ -25,9 +25,9 @@ export default async function AdminPage() {
 
     return (
         <div style={{ padding: '2rem' }}>
-            <h1>Admin Panel</h1>
-            <Link href="/admin/create" className="button-link" style={{ marginBottom: '1rem' }}>
-                ➕ Create New
+            <h1>Admin</h1>
+            <Link href="/admin/create" style={{ display: 'inline-block', marginBottom: '1rem' }}>
+                Create New
             </Link>
             <table
                 style={{
@@ -61,11 +61,25 @@ export default async function AdminPage() {
                     <td style={{ padding: '8px', whiteSpace: 'nowrap' }}>{drug.drug_color}</td>
                     <td style={{ padding: '8px', whiteSpace: 'nowrap' }}>
                         <form action={deleteDrug.bind(null, drug.id)}>
-                        <button type="submit">Delete</button>
+                            <button
+                            type="submit"
+                            style={{
+                                background: 'none',
+                                border: 'none',
+                                color: 'red',
+                                cursor: 'pointer',
+                                textDecoration: 'underline',
+                                padding: 0,
+                                fontSize: 'inherit'
+                            }}
+                            >
+                                D
+                            </button>
                         </form>
                     </td>
+
                     <td style={{ padding: '8px', whiteSpace: 'nowrap' }}>
-                        <Link href={`/admin/edit/${drug.id}`} className="button-link">Edit</Link>
+                        <Link href={`/admin/edit/${drug.id}`}>E</Link>
                     </td>
                     </tr>
                 ))}
