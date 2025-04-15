@@ -1,5 +1,6 @@
 import CreateForm from './CreateForm';
 import { revalidatePath } from 'next/cache';
+import { redirect } from 'next/navigation';
 
 export const dynamic = 'force-dynamic';
 
@@ -25,6 +26,9 @@ async function addDrugToDatabase(formData) {
     //on demand revalidation
     revalidatePath('/admin');
     revalidatePath('/collection');
+
+    //go back to admin
+    redirect('/admin');
 }
 
 export default function CreatePage() {

@@ -2,8 +2,7 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 
-export default function EditForm({ drug }) {
-    const router = useRouter();
+export default function EditForm({ drug, action }) {
 
     const [form, setForm] = useState({
         ...drug,
@@ -34,21 +33,12 @@ export default function EditForm({ drug }) {
     };
 
     const handleSubmit = async (e) => {
-        e.preventDefault();
 
         const validationErrors = validate();
         if (validationErrors.length > 0) {
+            e.preventDefault(); //dont submit
             setErrors(validationErrors);
-            return;
         }
-
-        await fetch(`http://localhost:4000/drugs/${form.id}`, {
-            method: 'PUT',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ ...form, drug_dosage: parseInt(form.drug_dosage) }),
-        });
-
-        router.push('/admin');
     };
 
     const labels = {
@@ -67,11 +57,11 @@ export default function EditForm({ drug }) {
 
             {errors.length > 0 && (
                 <ul style={{ color: 'red', marginBottom: '1rem' }}>
-                {errors.map((err, idx) => <li key={idx}>{err}</li>)}
+                    {errors.map((err, idx) => <li key={idx}>{err}</li>)}
                 </ul>
             )}
 
-            <form onSubmit={handleSubmit}>
+            <form action={action} onSubmit={handleSubmit}>
 
                 <div style={{ marginBottom: '1rem' }}>
                     <label>{labels.id}:</label><br />
@@ -79,14 +69,14 @@ export default function EditForm({ drug }) {
                         type="text"
                         name="id"
                         value={form.id}
-                        readOnly
+                        readOnly //not gonna allow the user to change the id in edit form, only create
                         style={{
-                        width: '100%',
-                        backgroundColor: '#eee',
-                        color: '#333',
-                        padding: '0.5rem',
-                        border: '1px solid #ccc',
-                        borderRadius: '4px'
+                            width: '100%',
+                            backgroundColor: '#eee',
+                            color: '#333',
+                            padding: '0.5rem',
+                            border: '1px solid #ccc',
+                            borderRadius: '4px'
                         }}
                     />
                 </div>
@@ -96,19 +86,19 @@ export default function EditForm({ drug }) {
                     <div key={field} style={{ marginBottom: '1rem' }}>
                         <label>{labels[field]}:</label><br />
                         <input
-                        type="text"
-                        name={field}
-                        value={form[field]}
-                        onChange={handleChange}
-                        required
-                        style={{
-                            width: '100%',
-                            backgroundColor: 'white',
-                            color: '#333',
-                            padding: '0.5rem',
-                            border: '1px solid #ccc',
-                            borderRadius: '4px'
-                        }}
+                            type="text"
+                            name={field}
+                            value={form[field]}
+                            onChange={handleChange}
+                            required
+                            style={{
+                                width: '100%',
+                                backgroundColor: 'white',
+                                color: '#333',
+                                padding: '0.5rem',
+                                border: '1px solid #ccc',
+                                borderRadius: '4px'
+                            }}
                         />
                     </div>
                 ))}
@@ -118,34 +108,34 @@ export default function EditForm({ drug }) {
                     <label>{labels.drug_dosage}:</label><br />
                     <div style={{ display: 'flex', gap: '0.5rem' }}>
                         <input
-                        type="number"
-                        name="drug_dosage"
-                        value={form.drug_dosage}
-                        onChange={handleChange}
-                        required
-                        style={{
-                            flex: 1,
-                            backgroundColor: 'white',
-                            color: '#333',
-                            padding: '0.5rem',
-                            border: '1px solid #ccc',
-                            borderRadius: '4px'
-                        }}
+                            type="number"
+                            name="drug_dosage"
+                            value={form.drug_dosage}
+                            onChange={handleChange}
+                            required
+                            style={{
+                                flex: 1,
+                                backgroundColor: 'white',
+                                color: '#333',
+                                padding: '0.5rem',
+                                border: '1px solid #ccc',
+                                borderRadius: '4px'
+                            }}
                         />
                         <select
-                        name="drug_unit"
-                        value={form.drug_unit}
-                        onChange={handleChange}
-                        style={{
-                            padding: '0.5rem',
-                            border: '1px solid #ccc',
-                            borderRadius: '4px',
-                            backgroundColor: 'white',
-                            color: '#333'
-                        }}
+                            name="drug_unit"
+                            value={form.drug_unit}
+                            onChange={handleChange}
+                            style={{
+                                padding: '0.5rem',
+                                border: '1px solid #ccc',
+                                borderRadius: '4px',
+                                backgroundColor: 'white',
+                                color: '#333'
+                            }}
                         >
-                        <option value="mg">mg</option>
-                        <option value="g">g</option>
+                            <option value="mg">mg</option>
+                            <option value="g">g</option>
                         </select>
                     </div>
                 </div>

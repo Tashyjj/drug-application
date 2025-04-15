@@ -2,11 +2,11 @@
   "drugs": [
     {
       "id": "a1",
-      "drug_name": "Paii",
-      "drug_dosage": 11,
+      "drug_name": "pai",
+      "drug_dosage": 60,
       "drug_company": "HealthCorp",
-      "drug_shape": "oval",
-      "drug_color": "white",
+      "drug_shape": "circular",
+      "drug_color": "purple",
       "drug_unit": "g"
     },
     {
@@ -17,6 +17,69 @@
       "drug_shape": "rectangular",
       "drug_color": "red",
       "drug_unit": "mg"
+    },
+    {
+      "id": "fqwfq",
+      "drug_name": "qwfqw",
+      "drug_dosage": 1,
+      "drug_company": "wrg",
+      "drug_shape": "circular",
+      "drug_color": "yellow",
+      "drug_unit": "mg"
+    },
+    {
+      "id": "tes3",
+      "drug_name": "afwfw",
+      "drug_dosage": 18,
+      "drug_company": "wvw3rvr",
+      "drug_shape": "rectangular",
+      "drug_color": "orange",
+      "drug_unit": "mg"
+    },
+    {
+      "id": "tes5",
+      "drug_name": "idk",
+      "drug_dosage": 26,
+      "drug_company": "tru",
+      "drug_shape": "rectangular",
+      "drug_color": "purple",
+      "drug_unit": "mg"
+    },
+    {
+      "id": "test8",
+      "drug_name": "please",
+      "drug_dosage": 9000,
+      "drug_company": "see",
+      "drug_shape": "rectangular",
+      "drug_color": "orange",
+      "drug_unit": "mg"
+    },
+    {
+      "id": "test9",
+      "drug_name": "if ",
+      "drug_dosage": 899,
+      "drug_company": "this",
+      "drug_shape": "rectangular",
+      "drug_color": "green",
+      "drug_unit": "mg"
+    },
+    {
+      "id": "test10",
+      "drug_name": "wirks",
+      "drug_dosage": 5,
+      "drug_company": "if it does",
+      "drug_shape": "tab",
+      "drug_color": "blue",
+      "drug_unit": "mg"
+    },
+    {
+      "id": "n9",
+      "drug_name": "Pai",
+      "drug_dosage": 40,
+      "drug_company": "HealthCorp",
+      "drug_shape": "circular",
+      "drug_color": "orange",
+      "drug_unit": "g"
     }
   ]
 }
